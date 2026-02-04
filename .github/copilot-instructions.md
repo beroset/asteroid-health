@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Asteroid Health is a health tracking application for AsteroidOS smartwatches. It provides a graphical frontend for data collected by the `sensorlogd` daemon, displaying step counts, heart rate, and weight data.
+Asteroid Health is a health tracking application for AsteroidOS smartwatches. It provides a graphical frontend for data collected by the `sensorlogd` daemon, displaying step counts, heart rate, and weight data with interactive graphs.
 
 ## Technology Stack
 
@@ -138,7 +138,6 @@ The project uses CPack to create IPK packages for AsteroidOS. Package metadata i
 ## Future Improvements (TODO)
 
 - Add translations/internationalization
-- Display heart rate data (currently recorded but not shown)
 - Support for additional sensors (GPS, altimeter, barometer)
 - Custom recording intervals configuration
 - More graph types and visualization options
