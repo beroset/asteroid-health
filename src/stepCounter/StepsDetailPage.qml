@@ -26,6 +26,7 @@ import "../graphs"
 Item {
     id: root
     property date currentDay: new Date()
+    property var weekday: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
     Flickable {
         anchors.fill: parent
         contentHeight: contentColumn.implicitHeight
