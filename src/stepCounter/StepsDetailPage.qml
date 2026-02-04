@@ -39,12 +39,16 @@ Item {
             Label {
                 width: parent.width*0.8
                 anchors.horizontalCenter: parent.horizontalCenter
-                //% "You've walked %1 steps today, keep it up!"
-                //: %1 is the number of steps
-                //% "You haven't yet logged any steps today"
-                //% "You walked %1 steps on this day"
-                //: %1 is the number of steps
-                text: dateCompare(stepsLineGraph.startTime,new Date()) ? (stepsDataLoader.getTodayTotal() ? qsTrId("id-steps-walked-today").arg(stepsDataLoader.todayTotal) : qsTrId("id-no-steps-today")) : (qsTrId("id-steps-walked-on-day").arg(stepsDataLoader.getTotalForDate(stepsLineGraph.startTime)))
+                text: dateCompare(stepsLineGraph.startTime,new Date()) ?
+                    (stepsDataLoader.getTodayTotal() ?
+                        //% "You've walked %1 steps today, keep it up!"
+                        //: %1 is the number of steps
+                        qsTrId("id-steps-walked-today").arg(stepsDataLoader.todayTotal) :
+                        //% "You haven't yet logged any steps today"
+                        qsTrId("id-no-steps-today")) :
+                    //% "You walked %1 steps on this day"
+                    //: %1 is the number of steps
+                    qsTrId("id-steps-walked-on-day").arg(stepsDataLoader.getTotalForDate(stepsLineGraph.startTime))
                 wrapMode: Text.WordWrap
                 horizontalAlignment: Text.AlignHCenter
                 visible: dateCompare(stepsLineGraph.startTime,stepsLineGraph.endTime)

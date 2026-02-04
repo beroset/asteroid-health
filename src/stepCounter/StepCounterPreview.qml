@@ -33,10 +33,12 @@ MouseArea {
         Label {
             width: parent.width*0.8
             anchors.horizontalCenter: parent.horizontalCenter
-            //% "You've walked %1 steps today, keep it up!"
-            //: %1 is the number of steps
-            //% "You haven't yet logged any steps today"
-            text: stepsDataLoader.getTodayTotal() ? qsTrId("id-steps-walked-today").arg(stepsDataLoader.todayTotal) : qsTrId("id-no-steps-today")
+            text: stepsDataLoader.getTodayTotal() ?
+                //% "You've walked %1 steps today, keep it up!"
+                //: %1 is the number of steps
+                qsTrId("id-steps-walked-today").arg(stepsDataLoader.todayTotal) :
+                //% "You haven't yet logged any steps today"
+                qsTrId("id-no-steps-today")
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignHCenter
         }
