@@ -23,7 +23,8 @@ import org.asteroid.sensorlogd 1.0
 
 Item {
     PageHeader {
-        text: "Logger Settings"
+        //% "Logger Settings"
+        text: qsTrId("id-logger-settings-title")
         z: 5
     }
     Flickable {
@@ -39,7 +40,8 @@ Item {
                 id: stepsEnableSwitch
                 width: parent.width
                 height: width*0.25
-                text: "Log step count"
+                //% "Log step count"
+                text: qsTrId("id-log-step-count")
                 Component.onCompleted: checked = loggerSettings.stepCounterEnabled
             }
             IntSelector {
@@ -56,7 +58,8 @@ Item {
                 id: stepsGoalEnableSwitch
                 width: parent.width
                 height: width*0.25
-                text: "Enable steps goal"
+                //% "Enable steps goal"
+                text: qsTrId("id-enable-steps-goal")
                 Component.onCompleted: checked = loggerSettings.stepGoalEnabled
             }
             IntSelector {
@@ -73,7 +76,8 @@ Item {
                 id: hrEnableSwitch
                 width: parent.width
                 height: width*0.25
-                text: "Log heart rate"
+                //% "Log heart rate"
+                text: qsTrId("id-log-heart-rate")
                 Component.onCompleted: checked = loggerSettings.heartrateSensorEnabled
             }
             IntSelector {

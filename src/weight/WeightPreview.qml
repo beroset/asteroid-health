@@ -33,7 +33,8 @@ MouseArea {
                 left: parent.left
                 margins: app.width*0.1
             }
-            text: "Weight"
+            //% "Weight"
+            text: qsTrId("id-weight")
         }
 
         Item { width: parent.width; height: parent.width*0.1}

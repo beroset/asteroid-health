@@ -27,7 +27,8 @@ import "../graphs"
 Item {
     PageHeader {
         id: title
-        text: "Weight"
+        //% "Weight"
+        text: qsTrId("id-weight")
         z: 5
     }
     Flickable {
@@ -53,7 +54,8 @@ Item {
             }
 
             LabeledActionButton {
-                text: "Add record"
+                //% "Add record"
+                text: qsTrId("id-add-record")
                 icon: "ios-add-circle-outline"
                 width: parent.width
                 height: width*0.2

@@ -99,7 +99,8 @@ Item {
                     width: parent.width/3
                     Label {
                         anchors.centerIn: parent
-                        text: "3 weeks"
+                        //% "3 weeks"
+                        text: qsTrId("id-3-weeks")
                     }
                     onClicked: {
                         var d = graph.endTime
@@ -112,7 +113,8 @@ Item {
                     width: parent.width/3
                     Label {
                         anchors.centerIn: parent
-                        text: "week"
+                        //% "week"
+                        text: qsTrId("id-week")
                     }
                     onClicked: {
                         var d = graph.endTime
@@ -125,7 +127,8 @@ Item {
                     width: parent.width/3
                     Label {
                         anchors.centerIn: parent
-                        text: "day"
+                        //% "day"
+                        text: qsTrId("id-day")
                     }
                     onClicked: {
                         graph.startTime = graph.endTime
@@ -137,6 +140,7 @@ Item {
         }
     }
     PageHeader {
-        text: "Heartrate"
+        //% "Heartrate"
+        text: qsTrId("id-heartrate")
     }
 }

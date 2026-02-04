@@ -24,7 +24,8 @@ import org.asteroid.sensorlogd 1.0
 
 Item {
     PageHeader {
-        text: "UI Settings"
+        //% "UI Settings"
+        text: qsTrId("id-ui-settings-title")
         z: 5
     }
     Flickable {
@@ -38,21 +39,24 @@ Item {
             LabeledSwitch {
                 width: parent.width
                 height: width*0.25
-                text: "Show step count preview"
+                //% "Show step count preview"
+                text: qsTrId("id-show-step-count-preview")
                 checked: stepsPreviewVisible.value
                 onCheckedChanged: stepsPreviewVisible.value = checked
             }
             LabeledSwitch {
                 width: parent.width
                 height: width*0.25
-                text: "Show heartrate preview"
+                //% "Show heartrate preview"
+                text: qsTrId("id-show-heartrate-preview")
                 checked: hrPreviewVisible.value
                 onCheckedChanged: hrPreviewVisible.value = checked
             }
             LabeledSwitch {
                 width: parent.width
                 height: width*0.25
-                text: "Show weight preview"
+                //% "Show weight preview"
+                text: qsTrId("id-show-weight-preview")
                 checked: weightPreviewVisible.value
                 onCheckedChanged: weightPreviewVisible.value = checked
             }

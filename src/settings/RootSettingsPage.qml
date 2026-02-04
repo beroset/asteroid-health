@@ -23,7 +23,8 @@ import org.asteroid.sensorlogd 1.0
 
 Item {
     PageHeader {
-        text: "Settings"
+        //% "Settings"
+        text: qsTrId("id-settings")
         z: 5
     }
     Flickable {
@@ -36,12 +37,14 @@ Item {
             Item { width: parent.width; height: parent.width*0.2}
 
             ListItem {
-                title: "UI settings"
+                //% "UI settings"
+                title: qsTrId("id-ui-settings")
                 iconName: "ios-settings-outline"
                 onClicked: pageStack.push(uiSettingsPage)
             }
             ListItem {
-                title: "Logger settings"
+                //% "Logger settings"
+                title: qsTrId("id-logger-settings")
                 iconName: "ios-settings-outline"
                 onClicked: pageStack.push(loggerSettingsPage)
             }

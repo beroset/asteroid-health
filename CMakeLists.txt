@@ -17,6 +17,8 @@ include(AsteroidTranslations)
 
 add_subdirectory(src)
 
+generate_translations()
+
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/asteroid-health.in
 	${CMAKE_BINARY_DIR}/asteroid-health
 	@ONLY)

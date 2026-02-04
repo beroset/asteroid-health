@@ -38,7 +38,12 @@ Item {
             Label {
                 width: parent.width*0.8
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: dateCompare(stepsLineGraph.startTime,new Date()) ? (stepsDataLoader.getTodayTotal() ?"You've walked " + stepsDataLoader.todayTotal + " steps today, keep it up!" : "You haven't yet logged any steps today") : ("You walked " + stepsDataLoader.getTotalForDate(stepsLineGraph.startTime) + " steps on this day") // 'on this day' is really clunky. TODO: revise
+                //% "You've walked %1 steps today, keep it up!"
+                //: %1 is the number of steps
+                //% "You haven't yet logged any steps today"
+                //% "You walked %1 steps on this day"
+                //: %1 is the number of steps
+                text: dateCompare(stepsLineGraph.startTime,new Date()) ? (stepsDataLoader.getTodayTotal() ? qsTrId("id-steps-walked-today").arg(stepsDataLoader.todayTotal) : qsTrId("id-no-steps-today")) : (qsTrId("id-steps-walked-on-day").arg(stepsDataLoader.getTotalForDate(stepsLineGraph.startTime)))
                 wrapMode: Text.WordWrap
                 horizontalAlignment: Text.AlignHCenter
                 visible: dateCompare(stepsLineGraph.startTime,stepsLineGraph.endTime)
@@ -50,7 +55,8 @@ Item {
                     left: parent.left
                     margins: app.width*0.1
                 }
-                text: "Steps"
+                //% "Steps"
+                text: qsTrId("id-steps")
             }
 
             Item { width: parent.width; height: parent.width*0.05}
@@ -132,7 +138,8 @@ Item {
                     width: parent.width/3
                     Label {
                         anchors.centerIn: parent
-                        text: "3 weeks"
+                        //% "3 weeks"
+                        text: qsTrId("id-3-weeks")
                     }
                     onClicked: {
                         var d = stepsLineGraph.endTime
@@ -146,7 +153,8 @@ Item {
                     width: parent.width/3
                     Label {
                         anchors.centerIn: parent
-                        text: "week"
+                        //% "week"
+                        text: qsTrId("id-week")
                     }
                     onClicked: {
                         var d = stepsLineGraph.endTime
@@ -160,7 +168,8 @@ Item {
                     width: parent.width/3
                     Label {
                         anchors.centerIn: parent
-                        text: "day"
+                        //% "day"
+                        text: qsTrId("id-day")
                     }
                     onClicked: {
                         stepsLineGraph.startTime = stepsLineGraph.endTime
@@ -176,6 +185,7 @@ Item {
         return (date1.getFullYear() == date2.getFullYear()) && (date1.getMonth() == date2.getMonth()) && (date1.getDate() == date2.getDate())
     }
     PageHeader {
-        text: "Steps"
+        //% "Steps"
+        text: qsTrId("id-steps")
     }
 }
