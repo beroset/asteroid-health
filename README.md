@@ -13,8 +13,17 @@ What sensorlogd allows, which isn't used by the app:
 * display heartrate data (the data is recorded but not displayed)
 
 TODO:
-* translations
 * recording of other sensors, such as GPS, altimeter or barometer (it's a sensor logger, not just a health tracker)
+
+## Translations
+
+The app now supports internationalization (i18n) and localization (l10n). All user-facing strings are translatable using Qt's translation system.
+
+For information about contributing translations or adding new languages, see [i18n/README.md](i18n/README.md).
+
+Currently available translations:
+* English (en) - Source language
+* German (de) - Sample translation
 
 ## Getting your data
 It should be obvious from a quick search of this source code that neither the app nor the logger contain any way to leak your data onto the internet. Your data is yours to keep: here's how you can get to it.

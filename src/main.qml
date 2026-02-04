@@ -45,7 +45,8 @@ Application {
             Item {
                 PageHeader {
                     id: title
-                    text: "Overview"
+                    //% "Overview"
+                    text: qsTrId("id-overview")
                     z: 5
                 }
 
@@ -78,7 +79,8 @@ Application {
                         }
 
                         ListItem {
-                            title: "Settings"
+                            //% "Settings"
+                            title: qsTrId("id-settings")
                             iconName: "ios-settings-outline"
                             onClicked: pageStack.push(settingsPage)
                         }
