@@ -26,6 +26,7 @@ import "../graphs"
 Item {
     id: root
     property date currentDay: new Date()
+    // TODO: Localize weekday abbreviations using Qt.locale().dayName() instead of hardcoded English strings
     property var weekday: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
     Flickable {
         anchors.fill: parent
