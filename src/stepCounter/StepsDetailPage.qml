@@ -26,8 +26,6 @@ import "../graphs"
 Item {
     id: root
     property date currentDay: new Date()
-    // TODO: Localize weekday abbreviations using Qt.locale().dayName() instead of hardcoded English strings
-    property var weekday: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
     Flickable {
         anchors.fill: parent
         contentHeight: contentColumn.implicitHeight
@@ -96,7 +94,8 @@ Item {
                                 maxValue = currvalue
                             }
                             valuesArr.push(currvalue)
-                            labelsArr.push(weekday[currDate.getDay()])
+                            const day = currDate.toLocaleString(Qt.locale(), "ddd")
+                            labelsArr.push(day)
                             if(dateCompare(currDate,stepsLineGraph.startTime) && dateCompare(currDate, stepsLineGraph.endTime)) {
                                 colorsArr.push("#FFF")
                             } else {

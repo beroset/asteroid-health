@@ -25,8 +25,6 @@ import "../graphs"
 
 MouseArea {
     implicitHeight: contentColumn.implicitHeight
-    // TODO: Localize weekday abbreviations using Qt.locale().dayName() instead of hardcoded English strings
-    property var weekday: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
     Column {
         id: contentColumn
         width: parent.width
@@ -84,7 +82,8 @@ MouseArea {
                             maxValue = currvalue
                         }
                         valuesArr.push(currvalue)
-                        labelsArr.push(weekday[currDate.getDay()])
+                        const day = currDate.toLocaleString(Qt.locale(), "ddd")
+                        labelsArr.push(day)
                     }
                 }
                 dataLoadingDone()
